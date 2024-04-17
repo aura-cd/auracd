@@ -38,12 +38,6 @@
                 "detail": "detailExample"
               }
             }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
-            }
           }
         },
         "tags": [
@@ -72,12 +66,6 @@
                 "title": "titleExample",
                 "detail": "detailExample"
               }
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
             }
           }
         },
@@ -116,12 +104,6 @@
                 "detail": "detailExample"
               }
             }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
-            }
           }
         },
         "parameters": [
@@ -158,12 +140,6 @@
                 "title": "titleExample",
                 "detail": "detailExample"
               }
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
             }
           }
         },
@@ -202,12 +178,6 @@
                 "detail": "detailExample"
               }
             }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
-            }
           }
         },
         "parameters": [
@@ -233,34 +203,6 @@
         "running"
       ],
       "default": "success"
-    },
-    "googlerpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
     },
     "v1Average": {
       "type": "object",

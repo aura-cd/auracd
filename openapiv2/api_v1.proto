@@ -37,7 +37,7 @@ service ApiService {
 
   rpc GetDeployments(GetDeploymentsRequest) returns (GetDeploymentsResponse){
     option (google.api.http) = {
-      get: "/deployments/{project_id}"
+      get: "/projects/{project_id}/deployments"
     };
     option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
       tags: ["Deployments"]
@@ -48,7 +48,7 @@ service ApiService {
   
   rpc GetDashboards(GetDashboardsRequest) returns (GetDashboardsResponse){
     option (google.api.http) = {
-      get: "/dashboards/{project_id}"
+      get: "/projects/{project_id}/dashboards"
     };
     option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
       tags: ["Dashboards"]
@@ -58,7 +58,7 @@ service ApiService {
   }
   rpc GetUsage(GetUsageRequest) returns (GetUsageResponse){
     option (google.api.http) = {
-      get: "/usages/{project_id}"
+      get: "/projects/{project_id}/usages"
     };
     option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
       tags: ["Usage"]
@@ -69,7 +69,7 @@ service ApiService {
 
   rpc GetSettings(GetSettingsRequest) returns (GetSettingsResponse){
     option (google.api.http) = {
-      get: "/settings/{project_id}"
+      get: "/projects/{project_id}/settings"
     };
     option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
       tags: ["Settings"]

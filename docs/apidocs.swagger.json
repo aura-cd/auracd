@@ -16,7 +16,42 @@
     "application/json"
   ],
   "paths": {
-    "/dashboards/{projectId}": {
+    "/projects": {
+      "get": {
+        "summary": "Get all projects",
+        "description": "Get all projects",
+        "operationId": "ApiService_GetProjects",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetProjectsResponse"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {},
+            "examples": {
+              "application/json": {
+                "status:": 1,
+                "title": "titleExample",
+                "detail": "detailExample"
+              }
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/googlerpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "Projects"
+        ]
+      }
+    },
+    "/projects/{projectId}/dashboards": {
       "get": {
         "summary": "Get all dashboards",
         "description": "Get all dashboards",
@@ -59,7 +94,7 @@
         ]
       }
     },
-    "/deployments/{projectId}": {
+    "/projects/{projectId}/deployments": {
       "get": {
         "summary": "Get all deployments",
         "description": "Get all deployments",
@@ -102,42 +137,7 @@
         ]
       }
     },
-    "/projects": {
-      "get": {
-        "summary": "Get all projects",
-        "description": "Get all projects",
-        "operationId": "ApiService_GetProjects",
-        "responses": {
-          "200": {
-            "description": "A successful response.",
-            "schema": {
-              "$ref": "#/definitions/v1GetProjectsResponse"
-            }
-          },
-          "500": {
-            "description": "Internal Server Error",
-            "schema": {},
-            "examples": {
-              "application/json": {
-                "status:": 1,
-                "title": "titleExample",
-                "detail": "detailExample"
-              }
-            }
-          },
-          "default": {
-            "description": "An unexpected error response.",
-            "schema": {
-              "$ref": "#/definitions/googlerpcStatus"
-            }
-          }
-        },
-        "tags": [
-          "Projects"
-        ]
-      }
-    },
-    "/settings/{projectId}": {
+    "/projects/{projectId}/settings": {
       "get": {
         "summary": "Get all settings",
         "description": "Get all settings",
@@ -180,7 +180,7 @@
         ]
       }
     },
-    "/usages/{projectId}": {
+    "/projects/{projectId}/usages": {
       "get": {
         "summary": "Get all usages",
         "description": "Get all usages",

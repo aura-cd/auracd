@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "docs/api_v1.proto",
+    "title": "openapiv2/api_v1.proto",
     "version": "version not set"
   },
   "tags": [

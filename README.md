@@ -4,6 +4,9 @@
 ## Description
 // TODO(user): An in-depth paragraph about your project and overview of use
 
+## API Documentation
+
+[swagger-ui](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/aura-cd/auracd/master/docs/apidocs.swagger.json)
 ## Getting Started
 
 ### Prerequisites

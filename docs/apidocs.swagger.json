@@ -306,27 +306,23 @@
     "v1DemploymentInfos": {
       "type": "object",
       "properties": {
-        "deploymentId": {
-          "type": "string"
+        "deployment": {
+          "$ref": "#/definitions/v1Deployment"
         },
-        "name": {
+        "git": {
+          "$ref": "#/definitions/v1Git"
+        }
+      }
+    },
+    "v1Deployment": {
+      "type": "object",
+      "properties": {
+        "deploymentId": {
           "type": "string"
         },
         "status": {
           "$ref": "#/definitions/apiv1Status",
           "title": "0: success, 1: error?"
-        },
-        "branch": {
-          "type": "string"
-        },
-        "hash": {
-          "type": "string"
-        },
-        "user": {
-          "type": "string"
-        },
-        "icon": {
-          "type": "string"
         },
         "updatedAt": {
           "type": "string"
@@ -357,7 +353,10 @@
           "type": "boolean"
         },
         "stage": {
-          "$ref": "#/definitions/v1Stage"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1Stage"
+          }
         }
       }
     },
@@ -372,20 +371,17 @@
         },
         "registry": {
           "$ref": "#/definitions/v1Registry"
-        },
-        "advanced": {
-          "type": "string"
         }
       }
     },
     "v1GetDashboardsResponse": {
       "type": "object",
       "properties": {
-        "productionInfos": {
+        "releaseInfos": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1ProductionInfos"
+            "$ref": "#/definitions/v1ReleaseInfos"
           }
         }
       }
@@ -417,12 +413,18 @@
     "v1GetSettingsResponse": {
       "type": "object",
       "properties": {
-        "settings": {
+        "general": {
+          "$ref": "#/definitions/v1General"
+        },
+        "environment": {
           "type": "array",
           "items": {
             "type": "object",
-            "$ref": "#/definitions/v1Settings"
+            "$ref": "#/definitions/v1Environment"
           }
+        },
+        "github": {
+          "$ref": "#/definitions/v1Github"
         }
       }
     },
@@ -445,6 +447,26 @@
             "type": "object",
             "$ref": "#/definitions/v1Containers"
           }
+        }
+      }
+    },
+    "v1Git": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "branch": {
+          "type": "string"
+        },
+        "hash": {
+          "type": "string"
+        },
+        "user": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
         }
       }
     },
@@ -471,9 +493,6 @@
         "name": {
           "type": "string"
         },
-        "agentVersion": {
-          "type": "string"
-        },
         "cpuUsage": {
           "type": "string"
         },
@@ -496,29 +515,6 @@
         },
         "isBuild": {
           "type": "boolean"
-        }
-      }
-    },
-    "v1ProductionInfos": {
-      "type": "object",
-      "properties": {
-        "productId": {
-          "type": "string"
-        },
-        "environment": {
-          "type": "string"
-        },
-        "url": {
-          "type": "string"
-        },
-        "repository": {
-          "type": "string"
-        },
-        "status": {
-          "type": "string"
-        },
-        "updatedAt": {
-          "type": "string"
         }
       }
     },
@@ -553,17 +549,26 @@
         }
       }
     },
-    "v1Settings": {
+    "v1ReleaseInfos": {
       "type": "object",
       "properties": {
-        "general": {
-          "$ref": "#/definitions/v1General"
+        "releaseId": {
+          "type": "string"
         },
         "environment": {
-          "$ref": "#/definitions/v1Environment"
+          "type": "string"
         },
-        "github": {
-          "$ref": "#/definitions/v1Github"
+        "url": {
+          "type": "string"
+        },
+        "repository": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
         }
       }
     },
